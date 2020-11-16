@@ -12,9 +12,7 @@ class SLL{
     }
 
     addFront(value){
-        console.log(value)
         var newNode = new Node(value);
-        console.log(newNode.value)
         if(this.head != null){
             
             newNode.next  = this.head;
@@ -39,15 +37,36 @@ class SLL{
     front(){
         return this.head.value;
     }
+
+    contains(value){
+        if(this.head==null){
+            return false;
+        }
+        else{
+            var temp = this.head;
+            while(temp!=null){
+                if(value == temp.value){
+                    return true;
+                }
+                else{
+                    temp = temp.next;
+                }
+            }
+            return false;
+        }
+    }
 }
 
 
-// var sll = new SLL();
-// sll.addFront("First");
-// console.log(sll.front());
+var sll = new SLL();
+sll.addFront("Zeroth");
 
-// sll.addFront("Second");
-// sll.addFront("Third");
+sll.addFront("First");
+console.log(sll.front());
+
+sll.addFront("Second");
+sll.addFront("Third");
+console.log(sll.contains("Third"));
 // console.log(sll.front());
 // sll.removeFront()
 // console.log(sll.front());
