@@ -17,4 +17,18 @@ class SLL{
         this.head = newNode;
         return this;
     }
+
+    removeFront(){
+        if(this.head){
+            this.head = this.head.next;
+        }
+        else{
+            return null;
+        }
+
+    }
+
+    front(){
+        return this.head.value;
+    }
 }
