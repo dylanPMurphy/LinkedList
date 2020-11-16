@@ -55,6 +55,37 @@ class SLL{
             return false;
         }
     }
+
+    length(){
+        if(this.head==null){
+            return 0;
+        }
+        else{
+            var temp = this.head;
+            var count = 0;
+            while(temp!=null){
+                count++;
+                temp = temp.next;
+            }
+            return count;
+        }
+    }
+    
+    display(){
+        if(this.head==null){
+            return null;
+        }
+        else{
+            var temp = this.head;
+            var out = '';
+            while(temp!=null){
+                out += temp.value;
+                out+=", ";
+                temp = temp.next;
+            }
+            return out;
+        }
+    }
 }
 
 
@@ -67,6 +98,8 @@ console.log(sll.front());
 sll.addFront("Second");
 sll.addFront("Third");
 console.log(sll.contains("Third"));
+console.log(sll.length())
+console.log(sll.display());
 // console.log(sll.front());
 // sll.removeFront()
 // console.log(sll.front());
