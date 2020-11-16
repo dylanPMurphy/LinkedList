@@ -86,20 +86,75 @@ class SLL{
             return out;
         }
     }
+
+    max(){
+        if(this.head==null){
+            return null;
+        }
+        else{
+            var temp = this.head;
+            var max = 0;
+            while(temp!=null){
+                if(temp.value> max){
+                    max = temp.value;
+                }
+                temp = temp.next;
+            }
+            return max;
+        }
+    }
+
+    min(){
+        if(this.head==null){
+            return null;
+        }
+        else{
+            var temp = this.head;
+            var min = Infinity;
+            while(temp!=null){
+                if(temp.value < min){
+                    min  = temp.value;
+                }
+                temp = temp.next;
+            }
+            return min
+        }
+    }
+    avg(){
+        if(this.head==null){
+            return null;
+        }
+        else{
+            var temp = this.head;
+            var count = 0;
+            var sum = 0;
+            while(temp!=null){
+                count++;
+                sum+=temp.value;
+                temp = temp.next;
+            }
+            return sum/count;
+        }
+    }
 }
 
 
 var sll = new SLL();
-sll.addFront("Zeroth");
+sll.addFront(1);
 
-sll.addFront("First");
+sll.addFront(2);
 console.log(sll.front());
 
-sll.addFront("Second");
-sll.addFront("Third");
+sll.addFront(3);
+sll.addFront(4);
 console.log(sll.contains("Third"));
 console.log(sll.length())
 console.log(sll.display());
+console.log(sll.min());
+console.log(sll.max());
+
+console.log(sll.avg());
+
 // console.log(sll.front());
 // sll.removeFront()
 // console.log(sll.front());
